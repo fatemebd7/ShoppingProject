@@ -1,0 +1,41 @@
+احراز هویت (JWT):
+
+POST /api/accounts/auth/signup/ → ساین‌اپ + دریافت توکن
+
+POST /api/accounts/auth/login/ → دریافت Access/Refresh
+
+POST /api/accounts/auth/refresh/ → رفرش توکن
+
+پروفایل:
+
+GET /api/accounts/profile/ → لیست/نمایش پروفایل خود کاربر (یک رکورد)
+
+POST /api/accounts/profile/ → ساخت/ویرایش اولیه
+
+GET|PUT|PATCH /api/accounts/profile/{id}/
+
+کاتالوگ:
+
+GET|POST /api/catalog/categories/
+
+GET|POST /api/catalog/products/
+
+GET|POST /api/catalog/sizes/
+
+GET|POST /api/catalog/colors/
+
+فروشگاه:
+
+GET /api/shop/cart/ (فقط کارت خودت)
+
+POST /api/shop/cart/add_item/ (body: product_id, quantity, size, color)
+
+POST /api/shop/cart/remove_item/ (body: item_id)
+
+GET|POST /api/shop/addresses/
+
+GET|POST /api/shop/orders/
+
+POST /api/shop/orders/checkout/
+
+نکته دسترسی: ساخت/ویرایش محصولات و دسته‌ها فقط برای کاربر با role = employee|admin باز است (در catalog.views.IsEmployeeOrAdmin).
