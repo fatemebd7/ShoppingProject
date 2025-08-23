@@ -37,3 +37,11 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = ("id", "user", "created_at", "status", "total_price", "items")
         read_only_fields = ("user", "total_price")
+
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ["id", "product", "rating", "comment", "created_at"]
+        read_only_fields = ["id", "created_at"]
